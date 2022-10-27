@@ -22,4 +22,10 @@ public class LoginPage {
     @FindBy(id="_submit")
     public WebElement loginBtn;
 
+
+    public void loginWithCredentials(String username, String password){
+        usernameLogin.sendKeys(username);
+        passwordLogin.sendKeys(password);
+        loginBtn.click();
+    }
 }

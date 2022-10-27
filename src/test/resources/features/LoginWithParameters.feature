@@ -4,14 +4,14 @@ Feature: Fleet Login Fuctionality
   test with valid credentials.
 
 
-  @wip2
+
   Scenario: Login as a driver
     Given User on the fleet login page
     When user enters driver username as "user1"
     And user enters driver password as "UserUser123"
     Then User on the Quick Launchpad page
 
-  @wip2
+
   Scenario: Login as sales manager
     Given User on the fleet login page
     When user enters sales manager username as "salesmanager101"
@@ -25,3 +25,49 @@ Feature: Fleet Login Fuctionality
     And user enters store manager password as "UserUser123"
     Then User on the Dashboard page
 
+
+  Scenario: Login as a driver
+    Given User on the fleet login page
+    When user enters below valid credentials as a driver
+      | username | user1       |
+      | password | UserUser123 |
+
+    Then User on the Quick Launchpad page
+
+  Scenario: Login as sales manager
+    Given User on the fleet login page
+    When user enters below valid credentials as a sales manager
+      | username | salesmanager101 |
+      | password | UserUser123     |
+    Then User on the Dashboard page
+
+
+  Scenario: Login as store manager
+    Given User on the fleet login page
+    When user enters below valid credentials as a storemanager
+      | username | storemanager85 |
+      | password | UserUser123    |
+    Then User on the Dashboard page
+
+  @wip2
+  Scenario: Login as a driver
+    Given User on the fleet login page
+    When user enters valid credentials as a driver
+      | user1       |
+      | UserUser123 |
+    Then User on the Quick Launchpad page
+  @wip2
+  Scenario: Login as sales manager
+    Given User on the fleet login page
+    When user enters valid credentials as a sales manager
+      | salesmanager101 |
+      | UserUser123     |
+    Then User on the Dashboard page
+
+  @wip2
+  Scenario: Login as store manager
+    Given User on the fleet login page
+    When user enters valid credentials as a storemanager
+      | storemanager85 |
+      | UserUser123    |
+    Then User on the Dashboard page

@@ -9,7 +9,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument;
 import org.junit.Assert;
+
+import java.util.List;
+import java.util.Map;
 
 public class LoginFleet_StepDefinitions {
     LoginPage loginPage = new LoginPage();
@@ -112,8 +116,46 @@ public class LoginFleet_StepDefinitions {
 
         Driver.closeDriver();
     }
+
+
+    @When("user enters below valid credentials as a driver")
+    public void userEntersBelowValidCredentialsAsADriver(Map<String, String> userInfo) {
+        loginPage.loginWithCredentials(userInfo.get("username"), userInfo.get("password"));
     }
 
+    @When("user enters below valid credentials as a sales manager")
+    public void userEntersBelowValidCredentialsAsASalesManager(Map<String, String> userInfo) {
+        loginPage.loginWithCredentials(userInfo.get("username"), userInfo.get("password"));
+    }
+
+    @When("user enters below valid credentials as a storemanager")
+    public void userEntersBelowValidCredentialsAsAStoremanager(Map<String, String> userInfo) {
+        loginPage.loginWithCredentials(userInfo.get("username"), userInfo.get("password"));
+    }
+
+    @When("user enters valid credentials as a driver")
+    public void userEntersValidCredentialsAsADriver(List<String> credentials) {
+        String username = credentials.get(0);
+        String password = credentials.get(1);
+        loginPage.loginWithCredentials(username,password);
+    }
+
+    @When("user enters valid credentials as a sales manager")
+    public void userEntersValidCredentialsAsASalesManager(List<String> credentials) {
+        String username = credentials.get(0);
+        String password = credentials.get(1);
+        loginPage.loginWithCredentials(username,password);
+    }
+
+    @And("user enters valid credentials as a storemanager")
+    public void userEntersValidCredentialsAsAStoremanager(List<String> credentials) {
+            String username = credentials.get(0);
+            String password = credentials.get(1);
+            loginPage.loginWithCredentials(username,password);
+}
+
+
+    }
 
 
 
