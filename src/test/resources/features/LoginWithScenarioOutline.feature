@@ -28,6 +28,8 @@ Examples:
       | StoreManager | storemanager856 | UserUser123   | Dashboard       |
       | StoreManager | storemanager85  | UserUser12345 | Dashboard       |
 
+
+
   Scenario Outline: Login with valid and blank input credentials as
    When "<userType>" enters "<username>" and "<password>"
    Then User on the "<expectedText>" page

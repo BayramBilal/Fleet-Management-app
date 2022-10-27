@@ -22,6 +22,9 @@ public class LoginPage {
     @FindBy(id="_submit")
     public WebElement loginBtn;
 
+    @FindBy(xpath="//h2")
+    public WebElement loginPage;
+
 
     public void loginWithCredentials(String username, String password){
         usernameLogin.sendKeys(username);

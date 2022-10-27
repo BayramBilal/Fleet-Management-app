@@ -19,6 +19,12 @@ public class HomePage {
     @FindBy(xpath = "//h1[@class='oro-subtitle']")
     public WebElement pageNameDashboard;
 
+    @FindBy(xpath = "//li[@id='user-menu']")
+    public WebElement dropdownLogout;
+
+    @FindBy(xpath = "//a[.='Logout']")
+    public WebElement logoutBtn;
+
 
 
 }
