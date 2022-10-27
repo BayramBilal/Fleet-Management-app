@@ -49,14 +49,14 @@ Feature: Fleet Login Fuctionality
       | password | UserUser123    |
     Then User on the Dashboard page
 
-  @wip2
+
   Scenario: Login as a driver
     Given User on the fleet login page
     When user enters valid credentials as a driver
       | user1       |
       | UserUser123 |
     Then User on the Quick Launchpad page
-  @wip2
+
   Scenario: Login as sales manager
     Given User on the fleet login page
     When user enters valid credentials as a sales manager
@@ -64,7 +64,7 @@ Feature: Fleet Login Fuctionality
       | UserUser123     |
     Then User on the Dashboard page
 
-  @wip2
+
   Scenario: Login as store manager
     Given User on the fleet login page
     When user enters valid credentials as a storemanager

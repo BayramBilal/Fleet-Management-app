@@ -155,11 +155,35 @@ public class LoginFleet_StepDefinitions {
 }
 
 
+    @When("{string} enters {string} and {string}")
+    public void entersAnd(String userType, String username, String password) {
+
+        if(userType.equalsIgnoreCase("Driver")){
+            loginPage.loginWithCredentials(username, password);
+        }else if (userType.equalsIgnoreCase("SalesManager")){
+            loginPage.loginWithCredentials(username, password);
+        }else{
+            loginPage.loginWithCredentials(username, password);
+        }
     }
+    @Then("User on the {string} page")
+    public void userOnThePage(String expectedText) {
+             String userType = "";
+        if(userType.equalsIgnoreCase("Driver"))   {
 
+           String actualText = homePage.pageName.getText();
+           Assert.assertEquals(expectedText, actualText);
 
+       }else {
+               BrowserUtils.wait(3);
+               String actualText = homePage.pageNameDashboard.getText();
+               Assert.assertEquals(expectedText, actualText);
+      }
 
+        Driver.closeDriver();
+   }
 
+      }
 
 
 
