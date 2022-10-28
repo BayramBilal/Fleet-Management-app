@@ -2,6 +2,7 @@ package com.cydeo.fleetApp.step_definitions;
 
 import com.cydeo.fleetApp.pages.HomePage;
 import com.cydeo.fleetApp.pages.LoginPage;
+import com.cydeo.fleetApp.utilities.BrowserUtils;
 import com.cydeo.fleetApp.utilities.ConfigurationReader;
 import com.cydeo.fleetApp.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -23,6 +24,7 @@ public class Logout_StepDefinitions {
     @When("user click dropdown menu")
     public void user_click_dropdown_menu() {
         homePage.dropdownLogout.click();
+        BrowserUtils.wait(2);
         homePage.logoutBtn.click();
     }
     @When("user logout from page")

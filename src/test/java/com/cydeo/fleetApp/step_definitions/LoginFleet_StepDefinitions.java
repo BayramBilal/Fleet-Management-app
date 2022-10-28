@@ -183,7 +183,18 @@ public class LoginFleet_StepDefinitions {
         Driver.closeDriver();
    }
 
-      }
+    @Then("User see the warning message")
+    public void userSeeTheWarningMessage() {
+
+
+    }
+
+    @Then("User see the validation message")
+    public void userSeeTheValidationMessage() {
+
+
+    }
+}
 
 
 

@@ -18,7 +18,8 @@ Examples:
 
     Scenario Outline: Login with invalid credentials as
       When "<userType>" enters "<username>" and "<password>"
-      Then User on the "<expectedText>" page
+      Then User see the warning message
+
     Examples:
       | userType     | username        | password      | expectedText    |
       | Driver       | user12          | UserUser123   | Quick Launchpad |
@@ -32,7 +33,8 @@ Examples:
 
   Scenario Outline: Login with valid and blank input credentials as
    When "<userType>" enters "<username>" and "<password>"
-   Then User on the "<expectedText>" page
+   Then User see the validation message
+
  Examples:
    | userType     | username        | password    | expectedText    |
    | Driver       |                 |             | Quick Launchpad |
