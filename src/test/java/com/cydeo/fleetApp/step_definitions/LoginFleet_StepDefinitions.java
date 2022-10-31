@@ -2,14 +2,12 @@ package com.cydeo.fleetApp.step_definitions;
 
 import com.cydeo.fleetApp.pages.HomePage;
 import com.cydeo.fleetApp.pages.LoginPage;
-
 import com.cydeo.fleetApp.utilities.BrowserUtils;
 import com.cydeo.fleetApp.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument;
 import org.junit.Assert;
 
 import java.util.List;
@@ -178,21 +176,36 @@ public class LoginFleet_StepDefinitions {
                BrowserUtils.wait(3);
                String actualText = homePage.pageNameDashboard.getText();
                Assert.assertEquals(expectedText, actualText);
+            Driver.closeDriver();
       }
-
-        Driver.closeDriver();
-   }
-
-    @Then("User see the warning message")
-    public void userSeeTheWarningMessage() {
-
 
     }
 
-    @Then("User see the validation message")
-    public void userSeeTheValidationMessage() {
+    @Then("the user sees the warning message on the page")
+    public void theUserSeesTheWarningMessageOnThePage() {
+        BrowserUtils.wait(2);
+        String expectedWarnMsg = "Invalid user name or password.";
+        String actualWarnMsg = loginPage.warningMsg.getText();
+        Assert.assertEquals(expectedWarnMsg, actualWarnMsg);
+        Driver.closeDriver();
 
+    }
 
+    @Then("User sees the validation message")
+    public void userSeesTheValidationMessage() {
+
+        String expectedValidationMsg = "Lütfen bu alanı doldurun.";
+
+        if(loginPage.usernameLogin.isSelected()){
+            String actualValidationMsg1 = loginPage.usernameLogin.getAttribute("validationMessage");
+            Assert.assertEquals(expectedValidationMsg, actualValidationMsg1);
+
+        }else if (loginPage.passwordLogin.isSelected()) {
+            String actualValidationMsg2 = loginPage.usernameLogin.getAttribute("validationMessage");
+            Assert.assertEquals(expectedValidationMsg, actualValidationMsg2);
+
+        }
+        Driver.closeDriver();
     }
 }
 
