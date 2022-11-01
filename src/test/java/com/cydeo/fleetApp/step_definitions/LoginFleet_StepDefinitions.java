@@ -62,11 +62,11 @@ public class LoginFleet_StepDefinitions {
     @When("user enters store manager password")
     public void user_enters_store_manager_password() {
         loginPage.passwordLogin.sendKeys("UserUser123");
+        BrowserUtils.wait(2);
         loginPage.loginBtn.click();
     }
     @Then("User on the Dashboard page")
     public void user_on_the_dashboard_page() {
-
 
         String expectedText = "Dashboard";
         String actualText = homePage.pageNameDashboard.getText();
