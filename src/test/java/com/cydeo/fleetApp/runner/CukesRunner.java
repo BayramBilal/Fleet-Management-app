@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/fleetApp/step_definitions",
         dryRun = false,
-        tags = "@NVF-666"
+        tags = "@NVF-707"
 
 
 )
