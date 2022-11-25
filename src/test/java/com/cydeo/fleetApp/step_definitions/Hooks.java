@@ -1,4 +1,4 @@
-package com.cydeo.fleetApp.runner;
+package com.cydeo.fleetApp.step_definitions;
 
 
 import com.cydeo.fleetApp.utilities.Driver;

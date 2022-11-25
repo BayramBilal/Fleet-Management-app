@@ -6,6 +6,7 @@ import com.cydeo.fleetApp.utilities.BrowserUtils;
 import com.cydeo.fleetApp.utilities.ConfigurationReader;
 import com.cydeo.fleetApp.utilities.Driver;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
@@ -37,4 +38,21 @@ public class Logout_StepDefinitions {
         Driver.closeDriver();
     }
 
+    @Then("User click step back after logout")
+    public void userClickStepBackAfterLogout() {
+
+        Driver.getDriver().navigate().back();
+        String expectedLogin ="Login";
+        String actualPageLogin = loginPage.loginPage.getText();
+
+        Assert.assertEquals(expectedLogin, actualPageLogin);
+    }
+
+
+    @When("user close the tab and quit the tabs")
+    public void userCloseTheTabAndQuitTheTabs() {
+
+        Driver.getDriver().quit();
+
+    }
 }

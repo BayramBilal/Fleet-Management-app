@@ -16,10 +16,10 @@ Examples:
   | StoreManager | storemanager85  | UserUser123 | Dashboard       |
 
 
-    Scenario Outline: Login with invalid credentials as
+    Scenario Outline: Login with invalid credentials
       When "<userType>" enters "<username>" and "<password>"
       Then the user sees the warning message on the page
-
+@NVF-726
     Examples:
       | userType     | username        | password      |
       | Driver       | user1223445     | UserUser123   |
@@ -29,11 +29,12 @@ Examples:
       | StoreManager | storemanager856 | UserUser123   |
       | StoreManager | storemanager85  | UserUser12345 |
 
-  @wip
-  Scenario Outline: Login with valid and blank input credentials as
+
+  Scenario Outline: Login with valid and blank input credentials
     When "<userType>" enters "<username>" and "<password>"
    Then User sees the validation message
 
+@NVF-728
  Examples:
    | userType     | username        | password    |
    | Driver       |                 |             |
